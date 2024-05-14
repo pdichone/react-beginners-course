@@ -19,14 +19,19 @@ function App() {
 
   return (
     <div className="App">
-      {books.map((book, index) => (
+      <UserProfile
+        name="John Doe"
+        email="john.doe@email.com"
+        bio="React Dev @ Tech Co."
+      />
+      {/* {books.map((book, index) => (
         <Book
           key={book.id}
           title={book.title}
           author={book.author}
           description={book.description}
         />
-      ))}
+      ))} */}
     </div>
   );
 }
@@ -38,6 +43,16 @@ function Book({ title, author, description }) {
       <h2>Title: {title}</h2>
       <h3>By {author}</h3>
       <p>Description: {description}</p>
+    </div>
+  );
+}
+
+function UserProfile({ name, email, bio }) {
+  return (
+    <div className="user-profile">
+      <h1>{name}</h1>
+      <p>Email: {email}</p>
+      <p>Bio: {bio}</p>
     </div>
   );
 }

@@ -4,6 +4,17 @@
   padding: 2rem;
   text-align: center;
 }
+/*
+ Added for the UserProfile Card component
+*/
+.user-profile {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 300px;
+  margin: 20px auto;
+  text-align: center;
+}
 
 .logo {
   height: 6em;
