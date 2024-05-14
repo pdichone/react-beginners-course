@@ -2,17 +2,25 @@
 import './App.css';
 
 function App() {
+  const bookName = 'Effective Java';
+  const author = 'Kathy Sierra';
+  const description = 'A great book about Java.';
+
   return (
     <div className="App">
-      <HelloWorld />
+      <Book title={bookName} author={author} description={description} />
     </div>
   );
 }
-
 export default App;
 
-// Next:: Create a book list component
-// then:: show all the books on a ul>li
-function HelloWorld() {
-  return <p>Hello World, Hanna!</p>;
+function Book(props) {
+  console.log(props);
+  return (
+    <div>
+      <h2>{props.title}</h2>
+      <h3>By {props.author}</h3>
+      <p>{props.description}</p>
+    </div>
+  );
 }
