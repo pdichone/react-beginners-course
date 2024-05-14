@@ -21,6 +21,7 @@ function App() {
     <div className="App">
       {books.map((book, index) => (
         <Book
+          key={book.id}
           title={book.title}
           author={book.author}
           description={book.description}
