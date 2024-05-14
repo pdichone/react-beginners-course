@@ -1,5 +1,7 @@
 /** @format */
 import './App.css';
+import Book from './components/Book';
+import UserProfile from './components/UserProfile';
 
 function App() {
   const books = [
@@ -19,40 +21,15 @@ function App() {
 
   return (
     <div className="App">
-      <UserProfile
-        name="John Doe"
-        email="john.doe@email.com"
-        bio="React Dev @ Tech Co."
-      />
-      {/* {books.map((book, index) => (
+      {books.map((book) => (
         <Book
           key={book.id}
           title={book.title}
           author={book.author}
           description={book.description}
         />
-      ))} */}
+      ))}
     </div>
   );
 }
 export default App;
-
-function Book({ title, author, description }) {
-  return (
-    <div>
-      <h2>Title: {title}</h2>
-      <h3>By {author}</h3>
-      <p>Description: {description}</p>
-    </div>
-  );
-}
-
-function UserProfile({ name, email, bio }) {
-  return (
-    <div className="user-profile">
-      <h1>{name}</h1>
-      <p>Email: {email}</p>
-      <p>Bio: {bio}</p>
-    </div>
-  );
-}
