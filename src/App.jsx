@@ -2,25 +2,41 @@
 import './App.css';
 
 function App() {
-  const bookName = 'Effective Java';
-  const author = 'Kathy Sierra';
-  const description = 'A great book about Java.';
+  const books = [
+    {
+      id: 1,
+      title: '1984',
+      author: 'George Orwell',
+      description: 'A dystopian novel.',
+    },
+    {
+      id: 2,
+      title: 'The Great Gatsby',
+      author: 'F. Scott Fitzgerald',
+      description: 'A novel set in the Jazz Age.',
+    },
+  ];
 
   return (
     <div className="App">
-      <Book title={bookName} author={author} description={description} />
+      {books.map((book, index) => (
+        <Book
+          title={book.title}
+          author={book.author}
+          description={book.description}
+        />
+      ))}
     </div>
   );
 }
 export default App;
 
 function Book(props) {
-  console.log(props);
   return (
     <div>
-      <h2>{props.title}</h2>
+      <h2>Title: {props.title}</h2>
       <h3>By {props.author}</h3>
-      <p>{props.description}</p>
+      <p>Description: {props.description}</p>
     </div>
   );
 }
