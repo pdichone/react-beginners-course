@@ -32,12 +32,12 @@ function App() {
 }
 export default App;
 
-function Book(props) {
+function Book({ title, author, description }) {
   return (
     <div>
-      <h2>Title: {props.title}</h2>
-      <h3>By {props.author}</h3>
-      <p>Description: {props.description}</p>
+      <h2>Title: {title}</h2>
+      <h3>By {author}</h3>
+      <p>Description: {description}</p>
     </div>
   );
 }
