@@ -34,14 +34,16 @@ function RandomQuote() {
     setQuote(quotes[randomIndex]);
   }
   return (
-    <div>
-      <div className="user-profile">
-        <div>
-          <h5>Random Quote</h5>
-          <p>"{quote.content}"</p>
-          <i>Author: {quote.author}</i>
+    <div className="container mt-2">
+      <div className="card">
+        <div className="card-body">
+          <h5 className="card-title">Random Quote</h5>
+          <p className="card-text">"{quote.content}"</p>
+          <footer className="blockquote-footer">{quote.author}</footer>
         </div>
-        <button onClick={getRandomQuote}>Get random quote</button>
+        <button className="btn btn-primary mt-3" onClick={getRandomQuote}>
+          Get random quote
+        </button>
       </div>
     </div>
   );
