@@ -20,7 +20,13 @@ function NameForm() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log('Event:::', event.target);
+
+    if (formData.name && formData.profession && formData.age) {
+      setProfiles([...profiles, formData]);
+      setFormData({ name: '', age: '', profession: '' });
+    } else {
+      alert('Please fill in all fields');
+    }
   }
   return (
     <div className="container mt-4">
@@ -59,13 +65,18 @@ function NameForm() {
         </div>
         <button className="btn btn-primary mt-2">Submit</button>
       </form>
-      {/* <ul>
-        {names.map((nameItem, index) => (
-          <li key={index} className="list-group-item">
-            {nameItem}
-          </li>
-        ))}
-      </ul> */}
+
+      {profiles.map((profile, index) => (
+        <div key={index} className="card mt-3">
+          <div className="card-body">
+            <h5 className="card-title">{profile.name}</h5>
+            <h6 className="card-subtitle mb-2 text-muted">
+              Age: {profile.age}
+            </h6>
+            <p className="card-text">Profession: {profile.profession}</p>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
