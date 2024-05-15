@@ -2,12 +2,17 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
-import NameForm from './components/Forms';
+import GroceryList from './components/grocery_list/components/GroceryList';
 
 function App() {
+  const groceries = [
+    { id: Date.now(), text: 'Bananas', bought: false },
+    { id: Date.now(), text: 'Pear', bought: false },
+    { id: Date.now(), text: 'Apple', bought: false },
+  ];
   return (
     <div className="container pt-2">
-      <NameForm />
+      <GroceryList items={groceries} />
     </div>
   );
 }
