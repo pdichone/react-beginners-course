@@ -5,6 +5,8 @@ import { booksData } from './components/data';
 import RandomQuote from './components/quotes_app/components/RandomQuote';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
+import DecrementButton from './components/counter_example/components/Decrement';
+import IncrementButton from './components/counter_example/components/Increment';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -86,22 +88,3 @@ function App() {
   );
 }
 export default App;
-
-function IncrementButton({ onIncrement }) {
-  return (
-    <div>
-      <button onClick={onIncrement} className="btn btn-success">
-        Increment
-      </button>
-    </div>
-  );
-}
-function DecrementButton({ onDecrement }) {
-  return (
-    <div>
-      <button onClick={onDecrement} className="btn btn-danger">
-        Decrement
-      </button>
-    </div>
-  );
-}
