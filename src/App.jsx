@@ -1,8 +1,7 @@
 /** @format */
 import './App.css';
 import Book from './components/Book';
-import UserProfile from './components/UserProfile';
-
+import { booksData } from './components/data';
 function App() {
   const books = [
     {
@@ -21,12 +20,14 @@ function App() {
 
   return (
     <div className="App">
-      {books.map((book) => (
+      {booksData.items.map((book, index) => (
         <Book
-          key={book.id}
-          title={book.title}
-          author={book.author}
-          description={book.description}
+          key={index}
+          title={book.volume.title}
+          author={book.volume.authors}
+          description={book.volume.description}
+          subtitle={book.volume.subtitle}
+          image={book.volume.image}
         />
       ))}
     </div>
