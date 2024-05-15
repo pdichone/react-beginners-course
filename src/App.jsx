@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
 
 function App() {
+  const [count, setCount] = useState(0);
   const [quote, setQuote] = useState('');
   const [color, setColor] = useState('bg-dark');
 
@@ -69,10 +70,38 @@ function App() {
     return colors[Math.floor(Math.random() * colors.length)];
   }
 
+  function increment() {
+    setCount((prevCount) => prevCount + 1);
+  }
+  function decrement() {
+    setCount((prevCount) => prevCount - 1);
+  }
   return (
     <div className="container pt-2">
-      <RandomQuote quote={quote} color={color} onChangeQuote={getRandomQuote} />
+      <p>Count: {count} </p>
+      <IncrementButton onIncrement={increment} />
+      <DecrementButton onDecrement={decrement} />
+      {/* <RandomQuote quote={quote} color={color} onChangeQuote={getRandomQuote} /> */}
     </div>
   );
 }
 export default App;
+
+function IncrementButton({ onIncrement }) {
+  return (
+    <div>
+      <button onClick={onIncrement} className="btn btn-success">
+        Increment
+      </button>
+    </div>
+  );
+}
+function DecrementButton({ onDecrement }) {
+  return (
+    <div>
+      <button onClick={onDecrement} className="btn btn-danger">
+        Decrement
+      </button>
+    </div>
+  );
+}
