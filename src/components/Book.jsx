@@ -12,10 +12,24 @@ function Book({ title, author, description, subtitle, image }) {
       <h4>Subtitle: {subtitle}</h4>
       <h3>By {author}</h3>
       <p>Description: {description}</p>
-      <button onClick={() => setIsRead(!isRead)}>
+      <button className="btn btn-primary" onClick={() => setIsRead(!isRead)}>
         {isRead ? 'Read' : 'Unread'}
       </button>
     </div>
   );
 }
 export default Book;
+
+// show in App.jsx
+{
+  /* {booksData.items.map((book, index) => (
+        <Book
+          key={index}
+          title={book.volume.title}
+          author={book.volume.authors}
+          description={book.volume.description}
+          subtitle={book.volume.subtitle}
+          image={book.volume.image}
+        />
+      ))} */
+}
