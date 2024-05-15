@@ -33,3 +33,23 @@ export default Book;
         />
       ))} */
 }
+
+/*
+  Book data:
+  const books = [
+    {
+      id: 1,
+      title: '1984',
+      author: 'George Orwell',
+      description: 'A dystopian novel.',
+    },
+    {
+      id: 2,
+      title: 'The Great Gatsby',
+      author: 'F. Scott Fitzgerald',
+      description: 'A novel set in the Jazz Age.',
+    },
+  ];
+
+  
+*/

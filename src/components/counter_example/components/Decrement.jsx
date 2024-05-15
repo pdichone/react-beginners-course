@@ -10,3 +10,16 @@ function DecrementButton({ onDecrement }) {
   );
 }
 export default DecrementButton;
+
+/*
+This is what goes inside the App.jsx parent component as part of lifting state up
+
+const [count, setCount] = useState(0);
+
+function increment() {
+    setCount((prevCount) => prevCount + 1);
+  }
+  function decrement() {
+    setCount((prevCount) => prevCount - 1);
+  }
+*/
