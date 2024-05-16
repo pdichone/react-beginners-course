@@ -18,7 +18,9 @@ function GroceryList({ items }) {
             <span>
               <p className="display-6 pt-2">{item.text}</p>
             </span>
-            <button className="btn btn-danger ms-5">delete</button>
+            <button className="btn btn-danger ms-5">
+              <i class="bi bi-trash"></i>
+            </button>
           </div>
         </div>
       ))}
