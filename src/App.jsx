@@ -27,11 +27,10 @@ function App() {
     setGroceriesItems([newGrocery, ...groceriesItems]);
     setGroceryInput('');
   }
-  const groceries = [
-    { id: Date.now(), text: 'Bananas', bought: false },
-    { id: Date.now(), text: 'Pear', bought: false },
-    { id: Date.now(), text: 'Apple', bought: false },
-  ];
+  function toggleBought(id) {
+    console.log('Toggling item', id);
+  }
+
   return (
     <div className="container pt-2">
       <GroceryNav />
@@ -40,7 +39,7 @@ function App() {
         handleOnSubmit={handleOnSubmit}
         item={groceryInput}
       />
-      <GroceryList items={groceriesItems} />
+      <GroceryList items={groceriesItems} handleOnToggle={toggleBought} />
       <GroceryFooter />
     </div>
   );

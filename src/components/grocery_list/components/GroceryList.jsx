@@ -1,7 +1,7 @@
 /** @format */
 import { ArrowRight } from 'react-bootstrap-icons';
 
-function GroceryList({ items }) {
+function GroceryList({ items, handleOnToggle }) {
   return (
     <div>
       {items.map((item) => (
@@ -11,6 +11,7 @@ function GroceryList({ items }) {
         >
           <div className="d-flex align-items-center">
             <div
+              onClick={() => handleOnToggle(item.id)}
               style={{ height: '20px', width: '20px' }}
               className="rounded-circle me-2 bg-success"
             ></div>
