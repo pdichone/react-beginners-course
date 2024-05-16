@@ -47,6 +47,9 @@ function App() {
     setGroceriesItems(updatedItems);
   }
 
+  const totalItems = groceriesItems.length;
+  const totalBought = groceriesItems.filter((item) => item.bought).length;
+
   return (
     <div className="container pt-2">
       <GroceryNav />
@@ -60,7 +63,7 @@ function App() {
         handleOnToggle={toggleBought}
         handleRemoveItem={handleRemoveItem}
       />
-      <GroceryFooter />
+      <GroceryFooter totalBought={totalBought} totalItems={totalItems} />
     </div>
   );
 }
