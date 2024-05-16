@@ -42,6 +42,11 @@ function App() {
     setGroceriesItems(updatedItems);
   }
 
+  function handleRemoveItem(id) {
+    const updatedItems = groceriesItems.filter((item) => item.id !== id);
+    setGroceriesItems(updatedItems);
+  }
+
   return (
     <div className="container pt-2">
       <GroceryNav />
@@ -50,7 +55,11 @@ function App() {
         handleOnSubmit={handleOnSubmit}
         item={groceryInput}
       />
-      <GroceryList items={groceriesItems} handleOnToggle={toggleBought} />
+      <GroceryList
+        items={groceriesItems}
+        handleOnToggle={toggleBought}
+        handleRemoveItem={handleRemoveItem}
+      />
       <GroceryFooter />
     </div>
   );

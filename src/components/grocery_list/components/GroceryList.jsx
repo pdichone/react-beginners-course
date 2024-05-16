@@ -1,6 +1,6 @@
 /** @format */
 
-function GroceryList({ items, handleOnToggle }) {
+function GroceryList({ items, handleOnToggle, handleRemoveItem}) {
   return (
     <div>
       {items.map((item) => (
@@ -20,12 +20,12 @@ function GroceryList({ items, handleOnToggle }) {
               }`}
             ></div>
 
-            <span className={`${
-                item.bought ? 'text-decoration-line-through' : ''
-            }`}>
+            <span
+              className={`${item.bought ? 'text-decoration-line-through' : ''}`}
+            >
               <p className="display-6 pt-2">{item.text}</p>
             </span>
-            <button className="btn btn-danger ms-5">
+            <button onClick={() => handleRemoveItem(item.id)} className="btn btn-danger ms-5">
               <i class="bi bi-trash"></i>
             </button>
           </div>
