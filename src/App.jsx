@@ -28,7 +28,18 @@ function App() {
     setGroceryInput('');
   }
   function toggleBought(id) {
-    console.log('Toggling item', id);
+    const updatedItems = groceriesItems.map((item) => {
+      if (item.id === id) {
+        console.log(
+          `Toggling item ${id}: currently ${
+            item.bought ? 'bought' : 'not bought'
+          }`
+        );
+        return { ...item, bought: !item.bought };
+      }
+      return item;
+    });
+    setGroceriesItems(updatedItems);
   }
 
   return (
